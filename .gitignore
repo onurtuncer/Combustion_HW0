@@ -1,5 +1,4 @@
-# Prerequisites
-*.d
+build/*
 
 # Compiled Object files
 *.slo
@@ -22,10 +21,6 @@
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
 # Compiled Static libraries
 *.lai
 *.la
@@ -35,7 +30,4 @@
 # Executables
 *.exe
 *.out
-*.app
 
-# debug information files
-*.dwo
