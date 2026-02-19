@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 # Combustion Homework-0
 
 Cantera setup for ITU UCK427E Combustion course students.
@@ -73,6 +75,94 @@ You should see,
 conda 24.x.x
 ```
 
+# 2. Create Dedicated C++ Environment
+
+Navigate to your project root:
+
+```bash
+cd path\to\your-project
+```
+
+Create an isolated environment:
+
+```bash
+conda create -n cpp_env
+```
+
+Activate it:
+
+```bash
+conda activate cpp_env
+```
+
+# 3. Install Required C++ Libraries
+
+All packages are installed from conda-forge.
+
+## 3.1 Install CMake
+
+```bash
+conda install -c conda-forge cmake
+```
+
+Verify:
+
+```bash
+cmake --version
+```
+
+## 3.2 Install Ninja (Optional but Recommended)
+
+```bash
+conda install -c conda-forge ninja
+```
+
+## 3.3 Install Cantera (C++ Development)
+
+```bash
+conda install -c conda-forge cantera-devel
+```
+
+This installs:
+
+- Headers
+- Static/Dynamic libraries
+- CMake configuration files
+
+Verify installation directory:
+
+```bash
+echo %CONDA_PREFIX%
+```
+
+# 4. Install MSVC Compiler 
+
+If you do not already have MSVC compiler for C/C++ development you must install it on your machine in one of the following ways.
+
+## Option A (Recommended for Students)
+
+Visual Studio 2022 Community
+
+Select: ✔ Desktop development with C++
+
+This installs:
+
+- MSVC compiler (cl.exe)
+- Windows SDK
+- CMake integration
+- Debugger
+
+## Option B (Lightweight)
+
+Build Tools for Visual Studio 2022
+
+Install only:
+
+- MSVC v143
+- Windows SDK
+
+No IDE, just compiler.
+
 After succesful compilation now run the executable. You should see the following output.
 
 ```bash
@@ -85,6 +175,18 @@ s [J/kg-K] = 7247.7
 cp [J/kg-K]= 1077.33
 T_ad [K]   = 2225.52
 ```
+Congragulations!..
+
+
+## 👤 Author
+
+**Prof.Dr. Onur Tuncer**  
+Mechanical Engineer, Researcher & C++ Systems Developer  
+Email: **onur.tuncer@itu.edu.tr**
+
+<p align="left">
+  <img src="assets/itu_logo.png" width="180" alt="Istanbul Technical University"/>
+</p>
 
 
 
