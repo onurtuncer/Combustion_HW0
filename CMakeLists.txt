@@ -1,3 +1,11 @@
+# ------------------------------------------------------------------------------
+# Project: ITU UCK427E
+# Copyright (c) 2025, Onur Tuncer, PhD, Istanbul Technical University
+#
+# SPDX-License-Identifier: MIT
+# License-Filename: LICENSE
+# ------------------------------------------------------------------------------
+
 cmake_minimum_required(VERSION 3.20)
 project(itu_combustion_cantera_cpp LANGUAGES CXX)
 
@@ -10,9 +18,6 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 if (MSVC)
   add_compile_options(/utf-8)
 endif()
-
-# Help CMake find packages inside an active Conda env
-#include(cmake/CanteraHints.cmake)
 
 # Use module mode not config mode
 find_package(Cantera REQUIRED)

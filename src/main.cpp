@@ -1,4 +1,13 @@
+// ------------------------------------------------------------------------------
+// Project: ITU UCK427E
+// Copyright(c) 2026, Onur Tuncer, PhD, Istanbul Technical University
+//
+// SPDX - License - Identifier: MIT
+// License - Filename: LICENSE
+// ------------------------------------------------------------------------------
+
 #include <cantera/base/Solution.h>
+#include <cantera/base/global.h> // for addDataDirectory()
 #include <cantera/thermo/ThermoPhase.h>
 #include <iostream>
 
@@ -6,8 +15,11 @@ int main()
 {
     try {
         std::cout << "Starting...\n";
-        // Use a repo-relative mechanism path (recommended)
-        auto sol = Cantera::newSolution("data/gri30.yaml");
+
+        // Add repo-local data directory
+        Cantera::addDataDirectory("data");
+
+        auto sol = Cantera::newSolution("gri30.yaml");
 
         // thermo() is a shared_ptr<ThermoPhase> in your build
         auto gas = sol->thermo();
@@ -32,5 +44,3 @@ int main()
 
     return 0;
 }
-
-

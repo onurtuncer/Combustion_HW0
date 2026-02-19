@@ -1,3 +1,11 @@
+# ------------------------------------------------------------------------------
+# Project: ITU UCK427E
+# Copyright (c) 2025, Onur Tuncer, PhD, Istanbul Technical University
+#
+# SPDX-License-Identifier: MIT
+# License-Filename: LICENSE
+# ------------------------------------------------------------------------------
+
 include(FindPackageHandleStandardArgs)
 
 # Roots (Conda first)
@@ -30,7 +38,7 @@ find_library(FMT_LIB
   PATHS ${_roots}
 )
 
-# --- yaml-cpp (often required) ---
+# --- yaml-cpp (often required for parsing thermo-chemistry and mechanism data files) ---
 find_library(YAMLCPP_LIB
   NAMES yaml-cpp yaml-cppd
   PATH_SUFFIXES lib Library/lib
@@ -73,7 +81,7 @@ find_library(SUNDIALS_SUNLINSOLBAND  NAMES sundials_sunlinsolband  PATH_SUFFIXES
 find_library(SUNDIALS_SUNMATRIXDENSE NAMES sundials_sunmatrixdense PATH_SUFFIXES lib Library/lib PATHS ${_roots})
 find_library(SUNDIALS_SUNMATRIXBAND  NAMES sundials_sunmatrixband  PATH_SUFFIXES lib Library/lib PATHS ${_roots})
 
- find_library(SUNDIALS_CVODES_LIB  NAMES sundials_cvodes  PATH_SUFFIXES lib Library/lib PATHS ${_roots})
+find_library(SUNDIALS_CVODES_LIB  NAMES sundials_cvodes  PATH_SUFFIXES lib Library/lib PATHS ${_roots})
 find_library(SUNDIALS_IDAS_LIB    NAMES sundials_idas    PATH_SUFFIXES lib Library/lib PATHS ${_roots})
 
 find_library(SUNDIALS_SUNLINSOLLAPACKDENSE NAMES sundials_sunlinsollapackdense PATH_SUFFIXES lib Library/lib PATHS ${_roots})
