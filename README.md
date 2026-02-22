@@ -2,7 +2,7 @@
 
 # Combustion Homework-0
 
-Cantera setup for ITU UCK-427E Combustion course students.
+Cantera setup for ITU UCK--427E Combustion course students.
 
 # C++ Development Environment Setup for CANTERA 
 
@@ -19,7 +19,7 @@ A clean, reproducible, ground-up installation for a **pure C++ workflow** for **
 
 # 0. Install MSVC Compiler 
 
-If you do not already have MSVC compiler for C/C++ development you must install it on your machine in one of the following ways.
+If you do not already have ***MSVC compiler*** for C/C++ development you must install it on your machine in one of the following ways.
 
 ## Option A (Recommended for Students)
 
@@ -65,7 +65,7 @@ Make sure that VS-Code is installed on your machine. If not then download and in
 - CMake 
 - CMake Tools
 
-Using git for version control is the most practical approach. After installing git on Windows you can open the git bash command prompt
+Using ***git*** for version control is the most practical approach. After installing git on Windows you can open the git bash command prompt
 and clone this repository into your development folder. Type the following command to clone this repo.
 
 ```bash
@@ -190,7 +190,7 @@ echo %CONDA_PREFIX%
 ## 5.1 Run VS Code
 
 At the miniforge command prompt change directory to where you have downloaded (or cloned) "Combustion_HW0" repository. Make 
-sure your development environment is active if not then activate it as instructed before.Type the following command 
+sure your development environment is active, if not then activate it as instructed before.Type the following command 
 so that VSCode starts with inheriting the correct environment variables for yor setup.
 
 ```bash
@@ -205,17 +205,53 @@ Open a terminal window inside VS Code. Create a build directory.
 mkdir build
 ```
 
+Inspect repo structure and folder organization. 
+
 Never clutter your original directories with build artifacts and keep them out-of source control at all times. That is why your ".gitignore" file lists "build" and all subdirectories to be ignored. Do check it out. 
 
 Under ***cmake*** directory your ***FindCantera.cmake*** module does all the heavy lifting for finding and linking necessary libraries and third-party dependencies. Read it but do not touch it. 
 
 ***CMakeLists.txt*** at the root directory of your repo is responsible for compiling the ***demo*** executable. For your homework stuff you will need to modify this file accordingly. Since our demo is a very simple one all the source code is in a single translation unit (e.g. cpp file) named ***main.cpp***. For the homeworks obviously you will write your own source code. 
 
-Now let u
+Now change into your build directory. 
 
+```bash
+cd build
+```
 
+Whilst you are inside the build directory, use ***cmake*** to configure your build with the following command. 
 
-Now run the compiled executable which you should find under the "Release" folder. You should see this output.
+```bash
+cmake -S .. -B .
+```
+
+You should see a similiar output.
+
+```bash
+PS D:\Dev\Combustion_HW0\build> cmake -S .. -B .
+-- Configuring done (0.3s)
+-- Generating done (0.2s)
+-- Build files have been written to: D:/Dev/Combustion_HW0/build
+```
+
+Once configuration is complete, run the following command to build your executable with "Release" configuration.
+
+```bash
+cmake --build . --config Release
+```
+
+Output should look like this.
+
+```bash
+PS D:\Dev\Combustion_HW0\build> cmake --build . --config Release
+MSBuild version 18.0.5+e22287bf1 for .NET Framework
+
+ main.cpp
+     Creating library D:/Dev/Combustion_HW0/build/Release/demo.lib and object D:/Dev/Combustion_HW0/build/Release/demo.exp
+  demo.vcxproj -> D:\Dev\Combustion_HW0\build\Release\demo.exe
+```
+
+Now run the compiled executable ***demo.exe***, which you should find under the "Release" folder of your build directory. You should see this output.
 
 ```bash
 PS D:\Dev\Combustion_HW0\build> .\Release\demo.exe
@@ -227,10 +263,11 @@ s [J/kg-K] = 7247.7
 cp [J/kg-K]= 1077.33
 T_ad [K]   = 2225.52
 ```
-Congragulations, you are all set!..
+
+Congragulations, you are all set!
 
 Note: Always build your executables with "Release" configuration since your ***CANTERA*** installation is built only with this configuration.
-If you try other configurations (e.g. "Debug" or "ReleaseWithDebugInfo") you will get linker errors!
+If you try other configurations (e.g. "Debug" or "ReleaseWithDebugInfo") you will get linker errors!..
 
 ---
 
