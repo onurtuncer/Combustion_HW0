@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # Project: ITU UCK427E
-# Copyright (c) 2025, Onur Tuncer, PhD, Istanbul Technical University
+# Copyright (c) 2026, Onur Tuncer, PhD, Istanbul Technical University
 #
 # SPDX-License-Identifier: MIT
 # License-Filename: LICENSE
